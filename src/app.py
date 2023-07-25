@@ -8,7 +8,7 @@ from dash.dependencies import Input, Output
 
 import os.path as path
 
-two_up =  path.abspath(path.join(__file__ ,"../.."))
+two_up =  path.abspath(path.join(__file__ ,"../"))
 # Load data
 df = pd.read_csv(two_up + '/data/wa_marathon_ranking.csv', index_col=0, parse_dates=True)
 df.index = pd.to_datetime(df.index)
