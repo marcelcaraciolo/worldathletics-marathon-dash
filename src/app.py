@@ -6,13 +6,11 @@ import plotly.graph_objects as go
 import pandas as pd
 from dash.dependencies import Input, Output
 
-import pathlib
-PATH = pathlib.Path(__file__).parent
-DATA_PATH = PATH.joinpath("data").resolve()
+import os.path as path
 
-
+two_up =  path.abspath(path.join(__file__ ,"../.."))
 # Load data
-df = pd.read_csv(DATA_PATH.joinpath('wa_marathon_ranking.csv'), index_col=0, parse_dates=True)
+df = pd.read_csv(two_up + '/data/wa_marathon_ranking.csv', index_col=0, parse_dates=True)
 df.index = pd.to_datetime(df.index)
 
 # Initialize the app
